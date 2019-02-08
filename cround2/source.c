@@ -1,56 +1,60 @@
 #include <stdio.h> 
 
 void simple_multiply(int a, int b){
+        
+//     //printf("enter thecl number\n");
+    scanf("%d%d", &a,&b);
 
     int result = a*b;
-
-    printf("%d*%d = %d \n",a,b,result);
+    //printf("enter the numbers\n");
+    printf("%d * %d = %d\n",a,b,result);
     
 }
 void simple_math(void){
     float x;
     char op;
     float y;
-    float result=0;
-    int ret;
+    float result;
     //char inp;
     //inp =scanf("%c",&op);
-    ret =scanf("%f%c%f",&x,&op,&y);
-    if (!ret){
-        printf("ERR\n");
-    }
-    else{
-        if(op=='+'){
-          result = x+y;
-          printf("%.1f\n",result);
-            
-        }
-        else if(op=='-'){
+    //printf("enter the numbers number\n");
+    scanf("%f %c %f", &x, &op, &y);
+   
+    
+    switch(op){
+        case '+':
+            result = x+y;
+            printf("%.1f\n",result);
+            break;
+        case '-':
             result = x-y;
             printf("%.1f\n",result);
-
-        }
-        else if(op=='*'){
+            break;
+        case '*':
             result = x*y;
             printf("%.1f\n",result);
-            
-        }
-        else if(op=='/'){
+            break;
+        case '/':
             result = x/y;
             printf("%.1f\n",result);
+            break;
+        default:
+             printf("ERR\n");
+             break;
+
             
-        }
-        else{
-            printf("ERR\n");
-        }
     }
+
+   
 }
 
 int main(void){
     int a =0;
     int b=0;
-    scanf("%d %d", &a, &b);
+    //printf("enter thecl number\n");
+    scanf("%d%d", &a,&b);
 
     simple_multiply(a,b);
     simple_math();
+    return 0;
 }
